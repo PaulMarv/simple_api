@@ -1,0 +1,19 @@
+{
+  "name": "expressjs_crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server",
+    "dev": "node --watch --env-file=.env server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.14.2",
+    "mongoose": "^8.12.1"
+  }
+}
