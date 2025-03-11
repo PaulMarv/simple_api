@@ -22,7 +22,7 @@ export const getProductById = async (req, res, next) => {
         }
         res.status(200).json(product)
     } catch (error) {
-        next(error)
+        res.status(500).json({message:"something went wrong !"})
     }
 }
 
@@ -42,7 +42,7 @@ export const postProduct = async (req, res, next) => {
     const product = await Product.create(req.body);
     res.status(201).json(product);
   } catch (error) {
-    next(error);
+    res.status(500).json({message:"something went wrong !"})
   }
 };
 
@@ -58,7 +58,7 @@ export const updateProduct = async (req, res, next ) =>{
         const updatedProduct = await Product.findById(req.params.id);
         res.status(200).json(updatedProduct);
     } catch (error) {
-        next(error);    
+        res.status(500).json({message:"something went wrong !"})
     }
 }
 
@@ -73,6 +73,6 @@ export const deleteProduct = async (req, res, next)=>{
         }
         res.status(204).json({message: 'Product deleted successfully'});
     } catch (error) {
-        next(error);
+        res.status(500).json({message:"something went wrong !"})
     }
 }
